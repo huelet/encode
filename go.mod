@@ -4,7 +4,6 @@ go 1.18
 
 require (
 	github.com/gofiber/fiber/v2 v2.32.0
-	github.com/joho/godotenv v1.4.0
 	github.com/u2takey/ffmpeg-go v0.4.1
 )
 

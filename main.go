@@ -7,17 +7,14 @@ import (
 	"github.com/gofiber/fiber/v2"
 	"github.com/huelet/encode/src/process"
 	"github.com/huelet/encode/src/utils"
-	"github.com/joho/godotenv"
 )
 
 func main() {
-	err := godotenv.Load()
-	utils.HandleError(err)
 	app := fiber.New(fiber.Config{
 		BodyLimit: 20 * 1024 * 1024 * 1024,
 	})
 
-	err = os.MkdirAll("./content/processed", os.ModePerm)
+	err := os.MkdirAll("./content/processed", os.ModePerm)
 	utils.HandleError(err)
 	err = os.MkdirAll("./content/input", os.ModePerm)
 	utils.HandleError(err)
