@@ -33,5 +33,5 @@ func main() {
 		return c.JSON(fiber.Map{"response": resp})
 	})
 
-	app.Listen(":3000")
+	app.Listen(fmt.Sprintf(":%s", os.Getenv("PORT")))
 }
