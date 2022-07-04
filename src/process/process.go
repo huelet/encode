@@ -9,7 +9,7 @@ import (
 
 func Encode(videoPath string, fileName string) (location string) {
 	err := ffmpeg.Input(videoPath).
-		Output(fmt.Sprintf(`./content/processed/%s`, fileName), ffmpeg.KwArgs{"c:v": "libx265"}).
+		Output(fmt.Sprintf(`./content/processed/%s`, fileName), ffmpeg.KwArgs{"c:v": "libx264"}).
 		OverWriteOutput().ErrorToStdOut().Run()
 	utils.HandleError(err)
 	return fmt.Sprintf("./content/processed/%s", fileName)
